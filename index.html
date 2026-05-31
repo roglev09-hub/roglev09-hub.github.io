@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#ff6b9d">
+    <title>Приглашение на свидание 💕</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="hearts-bg" aria-hidden="true"></div>
+
+    <main class="app">
+        <!-- Экран 1: Приглашение -->
+        <section class="screen screen--active" id="screen-invite" data-screen="0">
+            <div class="screen__content">
+                <span class="emoji-float">💌</span>
+                <h1 class="title">Пойдёшь со мной<br>на свидание?</h1>
+                <p class="subtitle">Обещаю, будет красиво</p>
+
+                <div class="buttons-area" id="buttons-area">
+                    <button class="btn btn--yes" id="btn-yes">Да! 💕</button>
+                    <button class="btn btn--no" id="btn-no">Нет</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Экран 2: План -->
+        <section class="screen screen--scroll" id="screen-plan" data-screen="1">
+            <div class="screen__content">
+                <span class="emoji-float">✨</span>
+                <h2 class="title title--small" id="plan-title">Что мы придумали</h2>
+                <p class="subtitle" id="plan-subtitle">Идеальный день — только мы двое</p>
+
+                <ul class="plan-list" id="plan-list">
+                    <!-- заполняется из config.js -->
+                </ul>
+
+                <button class="btn btn--primary" data-next>Звучит здорово!</button>
+            </div>
+        </section>
+
+        <!-- Экран 3: Послание -->
+        <section class="screen screen--scroll" id="screen-letter" data-screen="2">
+            <div class="screen__content">
+                <div class="letter-stage" id="letter-closed">
+                    <div class="envelope">
+                        <div class="envelope__flap"></div>
+                        <div class="envelope__body"></div>
+                        <div class="envelope__heart">💌</div>
+                    </div>
+                    <p class="subtitle" id="letter-hint">У меня для тебя кое-что...</p>
+                    <button class="btn btn--primary" id="btn-open-letter">Открыть конверт</button>
+                </div>
+
+                <div class="letter-stage letter-stage--hidden" id="letter-open">
+                    <div class="love-card">
+                        <div class="love-card__photo-wrap">
+                            <img
+                                class="love-card__photo"
+                                id="letter-photo"
+                                src=""
+                                alt="Для тебя"
+                            >
+                        </div>
+                        <p class="love-card__message" id="letter-text"></p>
+                    </div>
+                    <button class="btn btn--primary" data-next id="btn-letter-done">💕</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Экран 4: Финал -->
+        <section class="screen" id="screen-final" data-screen="3">
+            <div class="screen__content screen__content--center">
+                <span class="emoji-big">💕</span>
+                <h2 class="title title--small" id="final-title">Жду нашей встречи!</h2>
+                <p class="final-text" id="final-text">Не могу дождаться, когда увижу тебя...</p>
+                <div class="sparkles" aria-hidden="true">✦ ✦ ✦</div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Уведомление -->
+    <div class="toast" id="toast" role="status" aria-live="polite">
+        <span id="toast-text">Я так и знал! 😏</span>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
