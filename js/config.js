@@ -17,7 +17,7 @@ const CONFIG = {
         hint: 'У меня для тебя кое-что...',
         text: 'Люблю тебя, ангелочек',
         // Положи фото в папку images/ (например photo.jpg)
-        photo: 'images/photo_2026-05-31_14-23-59.jpg',
+        photo: './images/photo_2026-05-31_14-23-59.jpg',
     },
 
     final: {

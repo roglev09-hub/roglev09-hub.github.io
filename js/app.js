@@ -12,6 +12,10 @@
     let currentScreen = 0;
     let noClickCount = 0;
 
+    function asset(path) {
+        return new URL(path.replace(/^\.\//, ''), window.location.href).href;
+    }
+
     function renderContent() {
         document.getElementById('plan-title').textContent = CONFIG.planTitle;
         document.getElementById('plan-subtitle').textContent = CONFIG.planSubtitle;
@@ -19,7 +23,7 @@
         document.getElementById('letter-text').textContent = CONFIG.letter.text;
 
         const photo = document.getElementById('letter-photo');
-        photo.src = CONFIG.letter.photo;
+        photo.src = asset(CONFIG.letter.photo);
         photo.onerror = () => {
             photo.style.display = 'none';
             photo.parentElement.classList.add('love-card__photo-wrap--empty');
